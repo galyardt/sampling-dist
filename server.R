@@ -3,9 +3,19 @@
 source('Helpers.R')
 
 shinyServer(function(input, output) {
+  
+  dist.name <- reactive({
+    switch(input$dist,
+           norm = "Normal",
+           unif = "Uniform",
+           chisq = "Slightly Skewed",
+           weib = "Very Skewed"
+    )
+  })
+  
   # For the Population density
   output$pop.head <- renderText({
-    paste("Suppose we have a ", input$dist, " population distribution ", ',', sep='')
+    paste("Suppose we have a ", dist.name(), " population distribution ", ',', sep='')
   })
 
   output$dens <- renderPlot({
@@ -43,7 +53,7 @@ shinyServer(function(input, output) {
   output$samp.dist.head <- renderText({
     paste("The distribution of the ", input$theta, 
           " with a sample of size ", input$N,
-          ' from a ', input$dist ,' population is:', sep='')
+          ' from a ', dist.name() ,' population is:', sep='')
   })
   
   pop.mean <- reactive({

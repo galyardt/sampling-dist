@@ -18,18 +18,18 @@ shinyUI(fluidPage(
     
     mainPanel(
       # main population
-      h2(textOutput('pop.head')),
+      h4(textOutput('pop.head')),
       p("So that the population density looks like this:"),
      plotOutput("dens"),
       
       # Single Sample
-      h2(textOutput("samp.head")),
+      h4(textOutput("samp.head")),
       plotOutput("samp"),
-      h4("The summary statistics for this sample are:"),
+      p("The summary statistics for this example sample are:"),
       tableOutput("samp.stats"),
  
      # Sampling Distribution
-     h2(textOutput("samp.dist.head")),
+     h4(textOutput("samp.dist.head")),
      plotOutput("samp.dist")
       )
   )
