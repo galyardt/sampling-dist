@@ -11,9 +11,9 @@ shinyUI(fluidPage(
       selectInput('theta', label=h4("Parameter of Interest"), 
                   choices = c("mean", "median", "Q1", "Q3")),
       br(),
-      checkboxInput('pop.mean.box', "Show Population Mean", FALSE),
+      checkboxInput('pop.par.box', "Show Population Parameter (red)", FALSE),
       br(),
-      checkboxInput('samp.mean.box', "Show Mean of Example Sample", FALSE)
+      checkboxInput('samp.mean.box', "Show Statistic for Example Sample (green)", FALSE)
       ),
     
     mainPanel(
