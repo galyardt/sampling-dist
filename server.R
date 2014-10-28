@@ -18,7 +18,7 @@ shinyServer(function(input, output) {
            norm = norm.pars$mu,
            unif = (unif.pars$min + unif.pars$max)/2,
            chisq = chisq.pars$df,
-           weib = weib.pars$scale*gamma(1+1/weib.pars$scale)
+           weib = weib.pars$scale*gamma(1+1/weib.pars$shape)
     )
   })
   
